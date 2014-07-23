@@ -77,7 +77,8 @@
                     <container>
                         <containerId>tomcat7x</containerId>
                         <zipUrlInstaller>
-                            <url>http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.47/bin/apache-tomcat-7.0.47.zip</url>
+                            <url>http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.47/bin/apache-tomcat-7.0.47.zip
+                            </url>
                         </zipUrlInstaller>
                     </container>
                     <configuration>
@@ -208,6 +209,12 @@
             <version>${jacoco.version}</version>
             <type>jar</type>
             <classifier>runtime</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>co.legaspi.httptools</groupId>
+            <artifactId>customhttpclient</artifactId>
+            <version>2.0.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
