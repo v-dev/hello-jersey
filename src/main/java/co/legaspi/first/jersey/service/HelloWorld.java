@@ -35,6 +35,6 @@ public class HelloWorld implements Hello {
 
     @Override
     public String post(String requestBody) {
-        return "";
+        return "You posted: " + requestBody;
     }
 }
