@@ -23,18 +23,23 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package co.legaspi.first.jersey.service;
 
-import javax.ws.rs.Path;
+import org.junit.Before;
+import org.junit.Test;
 
-@Path("/hello")
-public class HelloWorld implements Hello {
+import static org.assertj.core.api.Assertions.assertThat;
 
-    @Override
-    public String get() {
-        return "Hello, World!";
+public class HelloWorldTest {
+
+    private HelloWorld target;
+
+    @Before
+    public void before() {
+        target = new HelloWorld();
     }
 
-    @Override
-    public String post(String requestBody) {
-        return "You posted: " + requestBody;
+    @Test
+    public void test() {
+        String response = target.get();
+        assertThat(response).isEqualTo("Hello, World!");
     }
 }

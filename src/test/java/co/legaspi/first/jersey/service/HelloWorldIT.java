@@ -37,7 +37,7 @@ public class HelloWorldIT {
 
     private static final int HTTP_PORT = 58080;
     private static final String LOCALHOST = "localhost";
-    private static final String PATH = "/hello";
+    private static final String PATH = "/hello-jersey/hello";
     private static final String FULL_PATH = "http://" + LOCALHOST + ":" + HTTP_PORT + PATH;
 
     private Client client;
@@ -57,5 +57,17 @@ public class HelloWorldIT {
         LOG.info("result: " + result);
 
         assertThat(result).contains("Hello, World!");
+    }
+
+    @Test
+    public void postWithEntity() {
+        String entity = "my single line message entity body.";
+        result = client
+                .resource(FULL_PATH)
+                .queryParam("param", "value")
+                .entity(entity)
+                .post(String.class);
+
+        assertThat(result).contains("You posted: " + entity);
     }
 }
