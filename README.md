@@ -4,6 +4,5 @@ Very basic hello world web application using Jersey.  Mainly to test out Jacoco 
 ## To Launch Tomcat and Deploy ##
 `mvn clean cargo:run`
 
-## To Laucn Tomcat, Deploy, Run ITs with JaCoCo for Code Coverage ##
+## To Launch Tomcat, Deploy the war, and Run ITs with JaCoCo for Code Coverage ##
 `mvn clean verify`
-
